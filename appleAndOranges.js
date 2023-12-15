@@ -66,5 +66,6 @@ function countApplesAndOranges(s, t, a, b, apples, oranges) {
 			arr.push(oj);
 		}
 	}
-	return arr;
+	console.log(apps);
+  console.log(oj);
 }
