@@ -26,6 +26,29 @@ int: the number of integers that are between the sets
 */
 
 function getTotalX(a, b) {
-  // Write your code here
+	// Write your code here
+	let count = 0;
+	let hcd = -Infinity;
+	let lcd = Infinity;
 
+	for (let i = 0; i < a.length; i++) {
+		if (a[i] > hcd) {
+			hcd = a[i];
+		}
+	}
+
+	for (let j = 0; j < b.length; j++) {
+		if (b[j] < lcd) {
+			lcd = b[j];
+		}
+	}
+
+	for (let k = hcd; k <= lcd; k++) {
+		if (a.every((ele) => k % ele === 0)) {
+			if (b.every((ele) => ele % k === 0)) {
+				count++;
+			}
+		}
+	}
+	return count;
 }
